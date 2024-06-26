@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h2>Manage Balance</h2>
+<p>Current account balance: €{{ account_balance }}</p>
+<form method="POST">
+    <div class="form-group">
+        <label for="action">Action</label>
+        <select name="action" id="action" class="form-control" required>
+            <option value="add">Add</option>
+            <option value="subtract">Subtract</option>
+        </select>
+    </div>
+    <div class="form-group">
+        <label for="amount">Amount</label>
+        <input type="number" name="amount" id="amount" step="0.01" class="form-control" required>
+    </div>
+    <button type="submit" class="btn btn-primary">Update Balance</button>
+</form>
+
+{% endblock %}
+
+

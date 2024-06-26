@@ -1,0 +1,41 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WAREHOUSE ACCOUNTING SYSTEM</title>
+    <link rel="stylesheet" href="https://unpkg.com/spectre.css/dist/spectre.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/spectre.css/dist/spectre-exp.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/spectre.css/dist/spectre-icons.min.css">
+    <style>
+        body {
+            max-width: 95%;
+            margin: 10px auto;
+        }
+
+        .account-text {
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <header class="navbar">
+        <section class="navbar-section">
+            <a href="{{ url_for('home') }}"><img src="https://i.ibb.co/MhK86GD/WAS.jpg" width="300" alt="WAS"></a>
+            <a href="{{ url_for('balance') }}" class="btn btn-link btn btn-lg">Balance</a>
+            <a href="{{ url_for('sale') }}" class="btn btn-link btn btn-lg">Sale</a>
+            <a href="{{ url_for('purchase') }}" class="btn btn-link btn btn-lg">Purchase</a>
+            <a href="{{ url_for('history') }}" class="btn btn-link btn btn-lg">History</a>
+        </section>
+        <section class="navbar-section">
+            <h6 class="account-text text-primary">Account: € {{ account_balance }}</h6>
+        </section>
+    </header>
+    <main>
+        {% block content %}
+        <!-- Child templates will inject content here -->
+        {% endblock %}
+    </main>
+</body>
+</html>

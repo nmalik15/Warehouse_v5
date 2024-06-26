@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h2>Recorded Operations</h2>
+<table class="table table-striped table-hover">
+    {% for operation in operations %}
+    <tr>
+        {% if operation.type == "Balance" %}
+        <td>{{ operation.details }}</td>
+        {% elif operation.type == "Sale" %}
+        <td>{{ operation.details }}</td>
+        {% elif operation.type == "Purchase" %}
+        <td>{{ operation.details }}</td>
+        {% endif %}
+    </tr>
+    {% endfor %}
+</table>
+
+{% endblock %}
+
+
+<!-- <table class="table table-striped table-hover">
+    <thead>
+        <tr>
+            <th>Item name</th>
+            <th>Price per unit</th>
+            <th>Item Quantity</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for item in inventory %}
+        <tr>
+            <td>{{ item.product }}</td>
+            <td>{{ item.price }}</td>
+            <td>{{ item.quantity }}</td>
+        </tr>
+        {% endfor %}
+    </tbody> -->
